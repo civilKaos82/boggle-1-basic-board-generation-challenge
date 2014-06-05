@@ -6,6 +6,7 @@
 * Method definition, arguments, and return values
 * Implement common string methods
 * Internal representation vs. display representation
+* Write tests to handle edge cases in your code
 
 ##Summary
 
@@ -17,7 +18,7 @@ First, we're only going to model the first part of boggle, where you place the B
 
 We're going to do it in two steps. First, we'll to build a dumb version which doesn't care at all about whether it's likely that the Boggle board will have English words. Second, we'll build a version that models the dice.
 
-**Please Note:** Start with sample code from the original gist above. It gives a hint on class structure and internal methods.
+**Please Note:** Start with looking at the specs in the source folder.
 
 ##Releases
 
@@ -31,36 +32,34 @@ There are no other restrictions on the letters. They can appear multiple times, 
 
 I also know you're worrying about how "Q" is always "Qu" in Boggle. Stop! Just let it be "Q" for now.
 
-We want to write code that works like this:
+We want to write code that does the following:
 
-```ruby
-board = BoggleBoard.new
-puts board
-# An unshaken board prints out something sensible, like:
-# ____
-# ____
-# ____
-# ____
+* When the board is created it should look something like this when I print it:
 
-# Shake (and modify) the board
-board.shake!
+  ```ruby
+   ____
+   ____
+   ____
+   ____
+  ```
 
-puts board
-# Prints out:
-# DUMV
-# KSPD
-# HCDA
-# ZOHG
+* When the board is shaken it should look something like this when I print it:
 
-board.shake!
-puts board
+  ```ruby
+   DUMV
+   KSPD
+   HCDA
+   ZOHG
+  ```
 
-# We've shaken again, so a new random board:
-# QIRZ
-# EEBY
-# OEJE
-# MHCU
-```
+* When the board is shaken again it should look different when I print it:
+
+  ```ruby
+   QIRZ
+   EEBY
+   OEJE
+   MHCU
+  ```
 
 ###Release 1 : Smart(er) Boggle Board
 
@@ -100,14 +99,11 @@ Consider a few ways to make "Qu" print instead of just "Q", deliberate on the tr
 For example, something like this might be appropriate:
 
 ```text
-> puts board.shake!
 U  N  O  T
 S  E  W  G
 S  V  L  T
 L  Qu C  F
 ```
-
-Check out the [String#ljust](http://www.ruby-doc.org/core-1.9.3/String.html#method-i-ljust) method for an easy way to add the right amount of space for display.
 
 
 ##Optimize Your Learning
