@@ -118,4 +118,4 @@ As you're coding, ask yourself:
 
 * [Boggle on Wikipedia](http://en.wikipedia.org/wiki/Boggle)
 * [Play Boggle online](http://www.wordplays.com/boggle)
-* [String#ljust](http://www.ruby-doc.org/core-1.9.3/String.html#method-i-ljust)
+* [String#ljust](http://www.ruby-doc.org/core-2.2.0/String.html#method-i-ljust)
